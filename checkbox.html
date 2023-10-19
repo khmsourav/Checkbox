@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        
+        <style>
+            .Container {
+                padding: 100px;
+            }    
+            .select-wrapper {
+                margin-bottom: 30px;
+            }    
+
+            /* Checkbox css */
+
+            .checkbox-item.checkbox-selected {
+                position: relative;
+                font-size: .87em;
+                line-height: 20px;
+                font-weight: 500;
+                color: #344054;
+                padding-left: 23px;
+                cursor: pointer;
+                display: inline-flex;
+            }
+            /* Hide the browser's default checkbox */
+            .checkbox-item.checkbox-selected input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+            /* Create a custom checkbox */
+            .checkmark {
+                position: absolute;
+                top: 2px;
+                left: 0;
+                height: 16px;
+                width: 16px;
+                background-color:transparent;
+                border: 1px solid #D0D5DD;
+                border-radius: 4px;
+                transition: ease-in-out .35s;
+            }
+            /* When the checkbox is checked, add a blue background*/
+            .checkbox-item.checkbox-selected input:checked ~ .checkmark {
+                background-color: #F5F7FF;
+                border: 1px solid #597DFC;
+            }
+            /* Create the checkmark/indicator (hidden when not checked) */
+            .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+            /* Show the checkmark when checked */
+            .checkbox-item.checkbox-selected input:checked ~ .checkmark:after {
+                display: block;
+            }
+            /* Style the checkmark/indicator */
+            .checkbox-item.checkbox-selected .checkmark:after {
+                left: 5px;
+                top: 2px;
+                width: 4px;
+                height: 8px;
+                border: solid #597DFC;
+                border-width: 0 1px 1px 0;
+                transition: ease-in-out .35s;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            } 
+
+        </style>
+    </head>
+    <body>
+        <div class="Container">
+            <div class="select-wrapper">
+                <div class="form-field"">
+                    <div class="navigation-show">
+                        <label class="checkbox-item checkbox-selected">
+                            <input type="checkbox" value="header">Index
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>        
+            </div>
+        </div>
+        
+
+        <script>
+            
+        </script>
+            
+    </body>
+</html>
