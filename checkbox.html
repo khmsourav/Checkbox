@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Checkbox</title>
         
         <style>
             .Container {
@@ -74,20 +74,53 @@
                 transform: rotate(45deg);
             } 
 
+            /* simple checkbox */
+            input[type="checkbox"] {
+                appearance: none;
+                width: 24px;
+                height: 24px;
+                border: 1px solid #303030;
+                border-radius: 4px;
+                cursor: pointer;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                transition: background-color 0.3s ease-in-out;
+                position: relative;
+            }
+            input[type="checkbox"]::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 4px;
+                height: 10px;
+                border: solid #FFFFFF;
+                border-width: 0 2px 2px 0;
+                transition: ease-in-out.35s;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+            input[type="checkbox"]:checked {
+                background-color: #303030;
+            }
+            input[type="checkbox"]:checked::after {
+                color: #FFFFFF;
+            }
+
         </style>
     </head>
     <body>
         <div class="Container">
             <div class="select-wrapper">
-                <div class="form-field"">
-                    <div class="navigation-show">
-                        <label class="checkbox-item checkbox-selected">
-                            <input type="checkbox" value="header">Index
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                </div>        
+                <label class="checkbox-item checkbox-selected">
+                    <input type="checkbox" value="header">
+                    <span class="checkmark"></span>
+                </label> 
+                
+                <!-- Simple checkbox -->
+                <input type="checkbox" value="checkbox">
             </div>
+
         </div>
         
 
